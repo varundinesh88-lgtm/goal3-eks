@@ -1,4 +1,4 @@
-Goal 3 — 2048 EKS Deployment README
+# Project 2 - 2048 EKS Deployment
 
 ________________________________________
 
