@@ -62,9 +62,9 @@ ________________________________________
 High-Level Overview
 
              ┌────────────────────────┐
-             │        Developer        │
-             │   (Code + Dockerfile)   │
-             └──────────┬──────────────┘
+             │        Developer       │
+             │   (Code + Dockerfile)  │
+             └──────────┬─────────────┘
                         │
                         ▼
               ┌────────────────────┐
@@ -91,7 +91,7 @@ Flow Summary:
 3.	LoadBalancer service exposes the 2048 web app to the internet.
 ________________________________________
 ⚙️ Key Kubernetes Files
-deployment.yaml
+> deployment.yaml
 Defines the number of replicas and container image:
 apiVersion: apps/v1
 kind: Deployment
@@ -142,7 +142,6 @@ ________________________________________
 ________________________________________
 📂 Repository Structure
 2048-eks/
-│
 ├── Dockerfile
 ├── deployment.yaml
 ├── service.yaml
