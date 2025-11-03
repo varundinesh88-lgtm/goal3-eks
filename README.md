@@ -91,42 +91,48 @@ Flow Summary:
 3.	LoadBalancer service exposes the 2048 web app to the internet.
 ________________________________________
 ⚙️ Key Kubernetes Files
+
 deployment.yaml
+
 Defines the number of replicas and container image:
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: 2048-deployment
-  namespace: 2048-game
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: 2048
-  template:
+
+    apiVersion: apps/v1
+    kind: Deployment
     metadata:
-      labels:
-        app: 2048
+      name: 2048-deployment
+      namespace: 2048-game
     spec:
-      containers:
-        - name: 2048
-          image: <your-account-id>.dkr.ecr.us-east-1.amazonaws.com/2048-eks:v1
-          ports:
-            - containerPort: 80
+      replicas: 2
+      selector:
+        matchLabels:
+          app: 2048
+      template:
+        metadata:
+          labels:
+            app: 2048
+        spec:
+          containers:
+            - name: 2048
+              image: <your-account-id>.dkr.ecr.us-east-1.amazonaws.com/2048-eks:v1
+              ports:
+                - containerPort: 80
+
 service.yaml
+
 Exposes the app via LoadBalancer:
-apiVersion: v1
-kind: Service
-metadata:
-  name: 2048-service
-  namespace: 2048-game
-spec:
-  type: LoadBalancer
-  selector:
-    app: 2048
-  ports:
-    - port: 80
-      targetPort: 80
+
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: 2048-service
+      namespace: 2048-game
+    spec:
+      type: LoadBalancer
+      selector:
+        app: 2048
+      ports:
+        - port: 80
+          targetPort: 80
 ________________________________________
 🔍 Troubleshooting Notes
 Issue	Cause	Solution
