@@ -171,11 +171,11 @@ Exposes the app via LoadBalancer:
           
 ________________________________________
 
-### 🔍 _**Troubleshooting Notes**_(Issue	- Cause	- Solution)
+### 🔍 _**Troubleshooting Notes**_(Issue - Cause - Solution)
 
-no basic auth credentials when pushing to ECR	- Not logged in to ECR	- Run `aws ecr get-login-password ...
-LoadBalancer IP not showing	- EKS provisioning delay	- Wait 2–5 minutes or run kubectl get svc -n 2048-game -w
-Site not loading	- Security group or region mismatch	- Ensure EKS cluster and ECR are in same region; verify inbound rules on the ELB
+* No basic auth credentials when pushing to ECR - Not logged in to ECR - Run `aws ecr get-login-password and docker login.
+* LoadBalancer IP not showing	- EKS provisioning delay - Waited some time, Run kubectl get svc -n 2048-game -w
+* Site not loading - Security group or region mismatch - Ensure EKS cluster and ECR are in same region; verify inbound rules on the ELB
 
 ________________________________________
 
