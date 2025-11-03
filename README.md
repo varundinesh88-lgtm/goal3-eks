@@ -2,17 +2,17 @@
 
 ________________________________________
 
-### 2048 Game Deployment on AWS EKS
+## 2048 Game Deployment on AWS EKS
 
 ________________________________________
 
-_**Project Overview**_
+### _**Project Overview**_
 
 This project demonstrates containerizing a web application (2048 game) with Docker, pushing it to Amazon ECR, and deploying it on Amazon EKS with Kubernetes. It also includes Horizontal Pod Autoscaling (HPA) to handle variable loads.
 
 ________________________________________
 
-🏗️ _**Architecture**_
+### 🏗️ _**Architecture**_
 
 Docker (2048 App) --> ECR Repo --> EKS Cluster --> Deployment --> Service (LoadBalancer) --> Public Web Access
 •	Docker: Containerizes the 2048 static web app.
@@ -27,7 +27,7 @@ Docker (2048 App) --> ECR Repo --> EKS Cluster --> Deployment --> Service (LoadB
 
 ________________________________________
 
-📂 _**Project Structure**_
+### 📂 _**Project Structure**_
 
     goal3-eks/
     ├─ app/               # 2048 source code (HTML/CSS/JS)
@@ -38,7 +38,7 @@ ________________________________________
     
 ________________________________________
 
-⚙️ _**Deployment Steps**_
+### ⚙️ _**Deployment Steps**_
 
 1. Build and Push Docker Image
 docker build -t 2048-eks:v1 ./app
@@ -69,19 +69,19 @@ kubectl get svc -n 2048-game
 
 ________________________________________
 
-📈 _**Scaling**_
+### 📈 _**Scaling**_
 
 •	HPA is configured to maintain 50% CPU utilization, scaling pods between 2 and 5 replicas automatically.
 
 ________________________________________
 
-🖼️ _**Screenshots**_
+### 🖼️ _**Screenshots**_
 
 (Add screenshots of the 2048 game running and HPA metrics)
 
 ________________________________________
 
-🏗️ _**Project Architecture**_
+### 🏗️ _**Project Architecture**_
 
 High-Level Overview
 
@@ -117,7 +117,7 @@ Flow Summary:
 
 ________________________________________
 
-⚙️ _**Key Kubernetes Files**_
+### ⚙️ _**Key Kubernetes Files**_
 
 deployment.yaml
 
@@ -163,7 +163,7 @@ Exposes the app via LoadBalancer:
           
 ________________________________________
 
-🔍 _**Troubleshooting Notes**_(Issue	- Cause	- Solution)
+### 🔍 _**Troubleshooting Notes**_(Issue	- Cause	- Solution)
 
 no basic auth credentials when pushing to ECR	- Not logged in to ECR	- Run `aws ecr get-login-password ...
 LoadBalancer IP not showing	- EKS provisioning delay	- Wait 2–5 minutes or run kubectl get svc -n 2048-game -w
@@ -171,7 +171,7 @@ Site not loading	- Security group or region mismatch	- Ensure EKS cluster and EC
 
 ________________________________________
 
-🧠 _**Key Learnings**_
+### 🧠 _**Key Learnings**_
 
 •	Hands-on with Kubernetes deployments and services on AWS EKS
 •	Experience with Docker image builds and ECR authentication
@@ -179,7 +179,7 @@ ________________________________________
 •	End-to-end knowledge of containerized workloads on AWS
 
 ________________________________________
-📂 _**Repository Structure**_
+### 📂 _**Repository Structure**_
 
     2048-eks/
     ├── Dockerfile
@@ -190,7 +190,7 @@ ________________________________________
     
 ________________________________________
 
-📸 _**Screenshots**_
+### 📸 _**Screenshots**_
 
 1.	ECR repository page with uploaded image
 2.	kubectl get pods -n 2048-game output
@@ -199,7 +199,7 @@ ________________________________________
 
 ________________________________________
 
-📘 _**References**_
+### 📘 _**References**_
 
 •	Kubernetes Official Docs
 •	Amazon EKS Workshop
