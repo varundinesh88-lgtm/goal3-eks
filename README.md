@@ -18,6 +18,7 @@ ________________________________________
 ### _**Architecture**_
 
 Docker (2048 App) --> ECR Repo --> EKS Cluster --> Deployment --> Service (LoadBalancer) --> Public Web Access
+
 •	Docker: Containerizes the 2048 static web app.
 
 •	ECR: Hosts the Docker image for Kubernetes deployment.
